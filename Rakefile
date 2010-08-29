@@ -25,12 +25,12 @@ end
 begin
   require 'jeweler'
   Jeweler::Tasks.new do |gemspec|
-    gemspec.name = "validation_reflection"
+    gemspec.name = "liangzan-validation_reflection"
     gemspec.summary = "Adds reflective access to validations"
     gemspec.description = "Adds reflective access to validations"
-    gemspec.email = "redinger@gmail.com"
-    gemspec.homepage = "http://github.com/redinger/validation_reflection"
-    gemspec.authors = ["Christopher Redinger"]
+    gemspec.email = "liangzan@gmail.com"
+    gemspec.homepage = "http://github.com/liangzan/validation_reflection"
+    gemspec.authors = ["Christopher Redinger", "Wong Liang Zan"]
   end
   Jeweler::RubyforgeTasks.new
 rescue LoadError
