@@ -49,7 +49,8 @@ class ValidationReflectionTest < Test::Unit::TestCase
          create_fake_column('col4'),
          create_fake_column('col5'),
          create_fake_column('col6'),
-         create_fake_column('col7')
+         create_fake_column('col7'),
+         create_fake_column('col8')
         ]
       end
     end
@@ -64,6 +65,7 @@ class ValidationReflectionTest < Test::Unit::TestCase
     validates_numericality_of :col5, :less_than => 5
     validates_something_weird :col6
     validates_something_selfcontained :col7
+    validates_size_of :col8, :is => 5
   end
 
   def test_sanity
@@ -121,6 +123,11 @@ class ValidationReflectionTest < Test::Unit::TestCase
   def test_ignored_subvalidations_are_not_reflected
     reflections = Dummy.reflect_on_validations_for(:col7)
     assert_equal 1, reflections.size
+  end
+
+  def test_string_size_is_reflected
+    reflections = Dummy.reflect_on_validations_for(:col8)
+    assert reflections.any? { |r| r.macro == :validates_size_of && r.options[:is] == 5 }
   end
 
 end
