@@ -22,11 +22,11 @@ Gem::Specification.new do |s|
      "README",
      "Rakefile",
      "VERSION.yml",
+     "liangzan-validation_reflection.gemspec",
      "lib/validation_reflection.rb",
      "rails/init.rb",
      "test/test_helper.rb",
-     "test/validation_reflection_test.rb",
-     "validation_reflection.gemspec"
+     "test/validation_reflection_test.rb"
   ]
   s.homepage = %q{http://github.com/liangzan/validation_reflection}
   s.rdoc_options = ["--charset=UTF-8"]
